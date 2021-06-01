@@ -4,5 +4,4 @@ const commentRouter = require('./comment.router');
 module.exports = {
   blogRouter,
   commentRouter
-
 };

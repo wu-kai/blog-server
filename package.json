@@ -5,8 +5,10 @@
   "main": "blog.app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"set NODE_ENV=development&&node blog.app.js",
-    "pro":"set NODE_ENV=production&&node blog.app.js"
+    "dev": "set NODE_ENV=development&&node app.js",
+    "pro": "set NODE_ENV=production&&node app.js",
+    "start": "npm run pro",
+    "deploy": "lean deploy"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,8 @@
   },
   "dependencies": {
     "async": "^2.6.1",
+    "leancloud-storage": "^4.10.1",
+    "leanengine": "^3.7.0",
     "mongoose": "~4.4.20",
     "multiparty": "^4.1.4",
     "node-cache": "^4.2.0",
