@@ -130,7 +130,20 @@ app.all('/', function (req, res) {
 
 app.use('/1.1', function (req, res) {
   const url = `https://admin.yichenk.com/1.1${req.url}`;
-  req.pipe(request(url)).pipe(res);
+  request({
+    url: url,
+    method: req.method,
+    headers: {
+      name: 'content-type',
+      value: 'application/x-www-form-urlencoded',
+      'X-LC-Id': req.headers['x-lc-id'],
+      'X-LC-Key': req.headers['x-lc-key']
+    },
+    json: true,
+    body: req.body,
+  }, function (error, response, body) {
+    res.send(error || body);
+  })
 });
 
 app.use('/api', function (req, res) {
