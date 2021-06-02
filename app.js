@@ -82,10 +82,9 @@ app.use(timeout('15s'));
 
 app.use(express.urlencoded());
 app.use(express.json());
-
-// app.get('/wxJssdk/getJssdk', (req, res) => {
-//   weixin.getWeiXin(req, res)
-// });
+app.get('/wxJssdk/getJssdk', (req, res) => {
+  weixin.getWeiXin(req, res)
+});
 app.post('/api/uploadFile_to_qiniu', multipartMiddleware, (req, res) => {
   /* 生成multiparty对象，并配置上传目标路径 */
   let form = new multiparty.IncomingForm();

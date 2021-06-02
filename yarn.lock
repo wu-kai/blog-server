@@ -1798,7 +1798,7 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-qiniu@^7.2.1:
+qiniu@^7.3.3:
   version "7.3.3"
   resolved "https://registry.yarnpkg.com/qiniu/-/qiniu-7.3.3.tgz#8e59cc3aaca2eaecc4f5e9090c39f2364a5db3eb"
   integrity sha512-uQ3LWieyfLaww5iIUdwE9pW19k1XCST31s7xLHUga62Wc7iZ3pt/7p6rfSAk8HuJZ51GSsnDS2cLI/3wOsUPxw==
