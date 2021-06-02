@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "set NODE_ENV=development&&node app.js",
     "pro": "set NODE_ENV=production&&node app.js",
-    "start": "npm run pro",
+    "start": "set NODE_ENV=production&&node app.js",
     "deploy": "lean deploy"
   },
   "author": "",
@@ -19,6 +19,9 @@
   },
   "dependencies": {
     "async": "^2.6.1",
+    "connect-multiparty": "^2.1.1",
+    "express": "^4.16.3",
+    "formidable": "^1.2.1",
     "leancloud-storage": "^4.10.1",
     "leanengine": "^3.7.0",
     "mongoose": "~4.4.20",
@@ -28,5 +31,9 @@
     "sha1": "^1.1.1",
     "ueditor": "^1.2.3",
     "wechat-jssdk": "^3.1.3"
+  },
+  "engines": {
+    "node": ">= 10.x",
+    "npm": ">= 3.0.0"
   }
 }

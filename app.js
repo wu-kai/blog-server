@@ -83,9 +83,9 @@ app.use(timeout('15s'));
 app.use(express.urlencoded());
 app.use(express.json());
 
-app.get('/wxJssdk/getJssdk', (req, res) => {
-  weixin.getWeiXin(req, res)
-});
+// app.get('/wxJssdk/getJssdk', (req, res) => {
+//   weixin.getWeiXin(req, res)
+// });
 app.post('/api/uploadFile_to_qiniu', multipartMiddleware, (req, res) => {
   /* 生成multiparty对象，并配置上传目标路径 */
   let form = new multiparty.IncomingForm();
@@ -148,6 +148,15 @@ app.use('/1.1', function (req, res) {
 
 app.use('/api', function (req, res) {
   res.send('这里什么都没有');
+});
+
+app.use(function (req, res, next) {
+  // 如果任何一个路由都没有返回响应，则抛出一个 404 异常给后续的异常处理器
+  if (!res.headersSent) {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  }
 });
 
 app.listen(port, function () {
