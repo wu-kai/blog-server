@@ -145,6 +145,15 @@ app.use('/1.1', function (req, res) {
   })
 });
 
+app.use('/api/blog/validate', function (req, res) {
+  const value = req.query.validateValue;
+  if (value === 'manage') {
+    res.jsonp({ result: true })
+  } else {
+    res.jsonp({ result: false })
+  }
+});
+
 app.use('/api', function (req, res) {
   res.send('这里什么都没有');
 });
